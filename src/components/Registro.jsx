@@ -51,7 +51,7 @@ function Registro() {
                     <div className="form-floating mb-3">          
                         <input
                         type="text"
-                        className="form-control pb-5"
+                        className="form-control"
                         id="floatingNombre"
                         placeholder="Escriba su nombre"
                         name="name"
