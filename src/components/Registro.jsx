@@ -44,57 +44,61 @@ function Registro() {
         <div className="container">
           {" "}
           {login ? (
-            <div className="container-f mx-auto">
-                <form onSubmit={handleFormSubmit} className="formReg">
-                    <h3 className="mb-5">Registro</h3>
+            <div className="row col-md-6 offset-md-3 mt-5">
+                <form onSubmit={handleFormSubmit} className="formr">
+                    <h3 className="display-5 mb-5"><strong>REGISTRO</strong></h3>
 
-                    <div className="form-group mb-3">
-                        <label className="mb-3">Nombre Completo</label>
+                    <div className="form-floating mb-3">          
                         <input
                         type="text"
-                        className="form-control"
+                        className="form-control pb-5"
+                        id="floatingNombre"
                         placeholder="Escriba su nombre"
                         name="name"
                         onChange={(event) => setName(event.target.value)}
                         />
+                        <label for="floatingNombre">Nombre Completo</label>
                     </div>
 
-                    <div className="form-group mb-3">
-                        <label className="mb-3">Identificación</label>
+                    <div className="form-floating mb-3">
                         <input
                         type="text"
                         className="form-control"
+                        id="floatingId"
                         placeholder="Número de Documento"
                         onChange={(event) => setIdentificacion(event.target.value)}
                         />
+                        <label for="floatingId">Identificación</label>
                     </div>
 
 
-                    <div className="form-group mb-3">
-                        <label className="mb-3">Email</label>
+                    <div className="form-floating mb-3">
                         <input
                         type="email"
                         className="form-control"
+                        id="floatingEmail"
                         placeholder="Enter email"
                         onChange={(event) => setEmail(event.target.value)}
                         />
+                        <label for="floatingEmail">Email</label>
                     </div>
 
-                    <div className="form-group mb-5">
-                        <label className="mb-3">Contraseña</label>
+                    <div className="form-floating mb-3">
                         <input
                         type="password"
+                        id="floatingPassword"
                         className="form-control"
                         placeholder="Escriba su contraseña"
                         onChange={(event) => setPassword(event.target.value)}
                         />
+                        <label for="floatingPassword">Contraseña</label>
                     </div>
 
                 
                     <button type="submit" className="btn btn-dark btn-lg btn-block">
                         Guardar
                     </button>
-                    <button onClick={handleClick} className="btn btn-primary btn-lg btn-block">
+                    <button onClick={handleClick} className="btn btn-success  btn-lg btn-block ">
                         Iniciar sesion
                         
                     </button>

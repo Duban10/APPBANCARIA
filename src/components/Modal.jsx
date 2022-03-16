@@ -60,7 +60,7 @@ const Modal = ({
 
 
   return (
-    <div className="modal">
+    <div className="modals">
         <div className="cerrar-modal">
           <img 
             src={CerrarBtn} 

@@ -35,40 +35,45 @@ function Login() {
     <div>
       
         {home ? (
-          <div className="container-f">
-            <form onSubmit={handleLogin} className="formReg">
-              <h3 className="mb-5">Iniciar Sesión</h3>
-              <div className="form-group mb-3">
-                <label className="mb-3">Email</label>
-                <input
-                  type="email"
-                  className="form-control"
-                  placeholder="Enter email"
-                  onChange={(event) => setEmaillog(event.target.value)}
-                />
+          <div className="container">
+              <div className="row col-md-6 offset-md-3 mt-5">
+                <form onSubmit={handleLogin} className="formReg">
+                <h3 className="display-5 mb-5"><strong>INICIAR SESIÓN</strong></h3>
+
+                  <div className="form-floating mb-3">
+                    <input
+                      type="email"
+                      className="form-control"
+                      id="floatingEmail"
+                      placeholder="Enter email"
+                      onChange={(event) => setEmaillog(event.target.value)}
+                    />
+                    <label for="floatingEmail">Email</label>
+                  </div>
+
+                  <div className="form-floating mb-3">
+                    <input
+                      type="password"
+                      className="form-control"
+                      id="floatingPassword"
+                      placeholder="Enter password"
+                      onChange={(event) => setPasswordlog(event.target.value)}
+                    />
+                    <label for="floatingPassword">Password</label>
+                  </div>
+
+                  <button type="submit" className="btn btn-dark btn-lg btn-block">
+                    Ingresar
+                  </button>
+                  
+
+                  {flag && (
+                    <Alert color="primary" variant="warning">
+                      Todos los campos son importantes
+                    </Alert>
+                  )}
+                </form>
               </div>
-
-              <div className="form-group mb-3">
-                <label className="mb-3">Password</label>
-                <input
-                  type="password"
-                  className="form-control"
-                  placeholder="Enter password"
-                  onChange={(event) => setPasswordlog(event.target.value)}
-                />
-              </div>
-
-              <button type="submit" className="btn btn-dark btn-lg btn-block">
-                Ingresar
-              </button>
-              
-
-              {flag && (
-                <Alert color="primary" variant="warning">
-                  Todos los campos son importantes
-                </Alert>
-              )}
-            </form>
           </div>
         ) : (
           <Home />
