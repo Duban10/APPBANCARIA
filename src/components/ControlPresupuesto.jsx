@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { numeroCuenta } from '../helpers';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import "react-circular-progressbar/dist/styles.css"
 
@@ -79,6 +80,9 @@ const ControlPresupuesto = ({
 
                 <p>
                     <span>Movido: </span>{formatearCantidad(gastado)}
+                </p>
+                <p>
+                    <span>Numero de Cuenta: </span>{}
                 </p>
             </div>
         </div>

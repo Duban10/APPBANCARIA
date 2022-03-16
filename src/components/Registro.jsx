@@ -41,10 +41,10 @@ function Registro() {
   return (
     <>
  
-        <div className="container mt-5">
+        <div className="container">
           {" "}
           {login ? (
-            <div className="container mx-auto">
+            <div className="container-f mx-auto">
                 <form onSubmit={handleFormSubmit} className="formReg">
                     <h3 className="mb-5">Registro</h3>
 

@@ -14,3 +14,9 @@ export const formatearFecha = fecha => {
     }
     return fechaNueva.toLocaleDateString('es-ES', opciones)
 }
+
+export const numeroCuenta = () => {    
+    const random = Math.random().toString().substr(9)
+    
+    return random 
+}

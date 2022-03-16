@@ -35,9 +35,9 @@ function Login() {
     <div>
       
         {home ? (
-          <div className="container">
+          <div className="container-f">
             <form onSubmit={handleLogin} className="formReg">
-              <h3 className="mb-5">LogIn</h3>
+              <h3 className="mb-5">Iniciar Sesión</h3>
               <div className="form-group mb-3">
                 <label className="mb-3">Email</label>
                 <input
@@ -65,7 +65,7 @@ function Login() {
 
               {flag && (
                 <Alert color="primary" variant="warning">
-                 Todos los campos son Obligatorios
+                  Todos los campos son importantes
                 </Alert>
               )}
             </form>

@@ -1,75 +1,83 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Mensaje from './Mensaje'
 import CerrarBtn from '../img/cerrar.svg'
 
 const Modal = ({
     setModal, 
-    animarModal, 
     setAnimarModal, 
+    animarModal, 
     guardarGasto, 
     gastoEditar,
-    setGastoEditar
+    setGastoEditar 
 }) => {
+    
+    const [mensaje, setMensaje] = useState('')
 
-    const [mensaje, setMensaje] = useState('');
     const [nombre, setNombre] = useState('')
     const [cantidad, setCantidad] = useState('')
     const [categoria, setCategoria] = useState('')
     const [fecha, setFecha] = useState('')
     const [id, setId] = useState('')
 
+
+    // ENVIAR LO QUE ESTA EN EL OBJETO A LOS INPUT PARA EDITAR
     useEffect(() => {
-        if( Object.keys(gastoEditar).length > 0 ) {
+        if(Object.keys(gastoEditar).length > 0){
             setNombre(gastoEditar.nombre)
             setCantidad(gastoEditar.cantidad)
             setCategoria(gastoEditar.categoria)
-            setId(gastoEditar.id)
             setFecha(gastoEditar.fecha)
-        }
-    }, []);
+            setId(gastoEditar.id)
+          }
+    }, [])
+    
 
     const ocultarModal = () => {
+       
         setAnimarModal(false)
         setGastoEditar({})
         setTimeout(() => {
             setModal(false)
-        }, 500);
+        }, 500)
     }
 
-    const handleSubmit = e => {
-        e.preventDefault();
+    const handleSubmit = (e) => {
+        e.preventDefault()
 
-        if([ nombre, cantidad, categoria ].includes('')) {
+        if([nombre, cantidad, categoria].includes('')){
             setMensaje('Todos los campos son obligatorios')
 
             setTimeout(() => {
                 setMensaje('')
             }, 3000)
-            return
+            return;
         }
 
-        guardarGasto({nombre, cantidad, categoria, id, fecha})
+        guardarGasto({nombre, cantidad, categoria, fecha, id})
     }
 
-    return (
-        <div className="modal">
-            <div className="cerrar-modal">
-                <img 
-                    src={CerrarBtn}
-                    alt="cerrar modal"
-                    onClick={ocultarModal}
-                />
-            </div>
+    
 
-            <form 
+
+  return (
+    <div className="modal">
+        <div className="cerrar-modal">
+          <img 
+            src={CerrarBtn} 
+            alt="Cerrar Modal" 
+            onClick={ocultarModal}/>
+        </div>
+        {/* colocar y quitar clase dinamicamente 
+        - formulario es estatica - animar y cerrar es dinamica */}
+         <form 
                 onSubmit={handleSubmit}
                 className={`formulario ${animarModal ? "animar" : 'cerrar'}`}
             >
-                <legend>{gastoEditar.nombre ? 'Editar Movimiento' : 'Nuevo Movimiento'}</legend>
+                <legend>{gastoEditar.nombre ? 'Editar Movimiento':'Nuevo Movimiento'}</legend>
                 {mensaje && <Mensaje tipo="error">{mensaje}</Mensaje>}
 
                 <div className="campo">
-                    <label htmlFor="nombre">Nombre Gasto</label>
+                    <label htmlFor="nombre">Nombre del Banco</label>
 
                     <input 
                         id="nombre"
@@ -86,13 +94,13 @@ const Modal = ({
                     <input 
                         id="cantidad"
                         type="number"
-                        placeholder="Añade la cantidad: ej. 300"
+                        placeholder="Añade La cantidad: ej. 300"
                         value={cantidad}
                         onChange={ e => setCantidad(Number(e.target.value))}
                     />
                 </div>
                 <div className="campo">
-                    <label htmlFor="categoria">Categoría</label>
+                    <label htmlFor="categoria">Tipo de Movimiento</label>
 
                     <select
                         id="categoria"
@@ -108,12 +116,12 @@ const Modal = ({
 
                 <input
                     type="submit"
-                    value={gastoEditar.nombre ? 'Guardar Cambios' : 'Añadir Movimiento'}
+                    value={gastoEditar.nombre ? 'Guardar Cambios':'Añadir Movimiento'}
                 />
 
             </form>
-        </div>
-    )
+    </div>
+  )
 }
 
 export default Modal
