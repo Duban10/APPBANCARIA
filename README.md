@@ -7,3 +7,6 @@ la dependencia de Vite, utilizando tambien la dependencia de react-swipeable-lis
 para el trato interno con los datos. Para la ejecucion de este proyecto es necesarios 
 descargar e instalar los modulos de node ( npm install ) y 
 colocar en marcha el programa con el comando npm run dev.
+
+![image](https://user-images.githubusercontent.com/81790682/180614049-754c8917-ecd5-4d8c-8fbe-df077af768ad.png)
+
