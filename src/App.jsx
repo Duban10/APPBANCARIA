@@ -145,6 +145,7 @@
 // export default App
 
 import React from 'react';
+import Principal from './components/Principal';
 import Registro from './components/Registro';
 
 
@@ -153,7 +154,7 @@ function App() {
     <div className="App">
       <div className="outer">
         <div className="inner">
-          <Registro />
+          <Principal />
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Form, Alert } from "react-bootstrap";
 import Login from "./Login";
+import Styles from './styles.css'
 
 function Registro() {
   const [name, setName] = useState("");  
@@ -98,7 +99,7 @@ function Registro() {
                     <button type="submit" className="btn btn-dark btn-lg btn-block">
                         Guardar
                     </button>
-                    <button onClick={handleClick} className="btn btn-success  btn-lg btn-block ">
+                    <button onClick={handleClick} className="btn btn-info  btn-lg btn-block ">
                         Iniciar sesion
                         
                     </button>
