@@ -8,11 +8,12 @@ const Header = ({
     presupuesto, 
     setPresupuesto, 
     isValidPresupuesto, 
-    setIsValidPresupuesto 
+    setIsValidPresupuesto,
+    numberCount
 }) => {
     return (
         <header>
-            <h1>Movimientos Bancarios WPOSS</h1>
+            <h1>Movimientos Bancarios</h1>
 
             {isValidPresupuesto ? (
                 <ControlPresupuesto 
@@ -21,6 +22,7 @@ const Header = ({
                     presupuesto={presupuesto}
                     setPresupuesto={setPresupuesto}
                     setIsValidPresupuesto={setIsValidPresupuesto}
+                    numberCount={numberCount}
                 />
             ) : (
                 <NuevoPresupuesto 

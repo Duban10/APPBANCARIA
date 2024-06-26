@@ -17,6 +17,9 @@ export const formatearFecha = fecha => {
 
 export const numeroCuenta = () => {    
     const random = Math.random().toString().substr(9)
+
+    // const random = Math.random().toString(36).substring(2, 11)
+    // const fecha = Date.now().toString(36)
     
     return random 
 }

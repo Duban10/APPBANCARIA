@@ -3,7 +3,7 @@ import Header from './Header'
 import Filtros from './Filtros'
 import ListadoGastos from './ListadoGastos'
 import Modal from './Modal'
-import { generarId } from '../helpers'
+import { generarId, numeroCuenta } from '../helpers'
 import IconoNuevoGasto from '../img/nuevo-gasto.svg'
 
 function Principal() {
@@ -11,6 +11,10 @@ function Principal() {
   const [gastos, setGastos] = useState(
     localStorage.getItem('gastos') ? JSON.parse(localStorage.getItem('gastos')) : []
   )
+
+  const [numberCount, setNumberCount] = useState()
+
+  
 
   const [presupuesto, setPresupuesto] = useState(
     Number(localStorage.getItem('presupuesto')) ?? 0
@@ -57,6 +61,7 @@ function Principal() {
     if(presupuestoLS > 0 ) {
       setIsValidPresupuesto(true)
     }
+    setNumberCount(numeroCuenta())
   }, []);
   
 
@@ -92,6 +97,7 @@ function Principal() {
     const gastosActualizados = gastos.filter( gasto => gasto.id !== id);
     setGastos(gastosActualizados);
   }
+  console.log('numberCount:::::', numberCount)
 
   return (
       <div className={modal ? 'fijar' : '' }>
@@ -102,6 +108,7 @@ function Principal() {
             setPresupuesto={setPresupuesto}
             isValidPresupuesto={isValidPresupuesto}
             setIsValidPresupuesto={setIsValidPresupuesto}
+            numberCount={numberCount}
         />
 
         {isValidPresupuesto && (

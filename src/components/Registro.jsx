@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Form, Alert } from "react-bootstrap";
 import Login from "./Login";
-import Styles from './styles.css'
 
 function Registro() {
   const [name, setName] = useState("");  

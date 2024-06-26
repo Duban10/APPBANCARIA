@@ -8,7 +8,8 @@ const ControlPresupuesto = ({
         setGastos,
         presupuesto,
         setPresupuesto,
-        setIsValidPresupuesto
+        setIsValidPresupuesto,
+        numberCount
     }) => {
 
     const [porcentaje, setPorcentaje] = useState(10)
@@ -82,7 +83,7 @@ const ControlPresupuesto = ({
                     <span>Movido: </span>{formatearCantidad(gastado)}
                 </p>
                 <p>
-                    <span>Numero de Cuenta: </span>{}
+                    <span>Numero de Cuenta: </span>{numberCount}
                 </p>
             </div>
         </div>
