@@ -56,7 +56,7 @@ function Principal() {
   }, [filtro]);
 
   useEffect(() => {
-    const presupuestoLS = Number(localStorage.getItem('presupuesto')) ?? 0;
+    const presupuestoLS = Number(localStorage.getItem('presupuesto'));
 
     if(presupuestoLS > 0 ) {
       setIsValidPresupuesto(true)
